@@ -43,10 +43,9 @@ if __name__ == '__main__':
 
         elif last_node['right']:
             last_node['right'] = False
-            if i >=2 and last_node['string'][-1] != ',' and last_node['string'][-2] != ',':
-                continue
-            if last_node['string'][-1] != ',' and \
-               int(last_node['string'][-1] + input_string[i]) <= 26:
+            temp = last_node['string'].split(',')
+            value = int(temp[-1] + input_string[i])
+            if value <= 26:
                 node = {
                     'string': last_node['string'] + input_string[i],
                     'left': True,
